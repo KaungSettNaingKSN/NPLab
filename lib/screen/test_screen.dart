@@ -177,6 +177,7 @@ class TestScreenState extends State<TestScreen> {
                 quizProvider.saveAnswer(i, selectedAnswer);
               }
             }
+            quizProvider.stopTimer();
             Navigator.pushReplacementNamed(context, '/results');
           },
           child: const Text(

@@ -80,6 +80,12 @@ class TestProvider with ChangeNotifier {
     notifyListeners();
   }
 
+  void stopTimer() {
+    _timer?.cancel();
+    _timerValue = 110;
+    notifyListeners();
+  }
+
   void startTimer(BuildContext context) {
     _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
       if (timerValue > 0) {
